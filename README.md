@@ -7,6 +7,6 @@ Delete tasks: Each task in the list has a delete button that allows you to remov
 Cancel tasks: If you no longer want to complete a task, you can mark it as canceled by clicking on it. It will be visually indicated as canceled in the list.
 
 # Technologies Used
-  HTML
-  CSS
-  JAVASCRIPT
+ <ul>HTML</ul> 
+  <ul>CSS</ul>
+  <ul>JAVASCRIPT</ul>
