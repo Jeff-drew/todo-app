@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<div class = "container">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  </head>
+ 
+<body>
+
+  <div id="header" class="header">
+    <div class="header-top">
+      <h1>T O D O</h1>
+      <button class="toggle-button" onclick="myFunction()">
+        <img src="images/icon-sun.svg" alt="Light Mode Icon">
+      </button>
+    </div>
+    <div class="header-bottom">
+      <input type="text" id="newInput" placeholder="Create new task">
+    </div>
+  </div>
+  
+  
+
+  <div id = "todo-list-container">
+    <ul id = "todo-list">
+    </ul>
+
+   
+    
+    <div id="button-container">
+      <div id="task-count"></div>
+      <button id="all-button">All</button>
+      <button id="active-button">Active</button>
+      <button id="completed-button">Completed</button>
+      <button id="clear-completed-button"> Clear Completed</button>
+    </div>
+  </div>
+
+  
+
+
+
+  <script type ="text/javascript" src="script.js"></script>
+
+</body>
+</div>
+
+</html>

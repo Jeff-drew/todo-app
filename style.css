@@ -1,0 +1,363 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+#todo-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  color: black;
+}
+#todo-list {
+  margin:20px;
+  padding: 50px;
+  width: 500px;
+  position: relative;
+  list-style: none;
+  text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #000;
+}
+
+/*******************************************************************************/
+/*margins and padding for the list */
+ul {
+  margin:20px;
+  padding: 50px;
+  width: 500px;
+  
+}
+/* Style the list items */
+ul li {
+  list-style: none;
+  font-size: 18px;
+  padding: 12px 8px 12px 40px;
+  user-select: none;
+  position: relative;
+  cursor: pointer;
+  border-bottom: solid 1px hsl(233, 11%,84%);
+  color: hsl(240deg 5.41% 29.27%);;
+  text-align: left;
+  font-family: 'Josefin Sans', sans-serif; 
+}
+/* Adding circles for checks*/
+ul li::before {
+  content:"";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  background-image: url(images/grey_circle-unchecked-removebg-preview.png);
+  top: 17px;
+  left: 8px; 
+}
+/* Darker background-color on hover 
+ul li:hover {
+  background: hsl(236, 33%, 92%)
+}*/
+
+/* When clicked on, add a background color and strike out text */
+ li.checked {
+  color: hsl(236, 9%, 61%);
+  text-decoration: line-through;
+}
+
+/* "checked" mark when clicked*/
+li.checked::before {
+ /* background-color: transparent;*/
+  background-image: url(images/correct-checkbox.png);
+ /* background-size: cover;*/
+}
+/* Style the close button */
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+} 
+.close:hover {
+  background-color: #f44336;
+  color: white;
+}
+/***************************************************************************************************/
+/* header style*/
+.header {
+  background-image: url(images/bg-desktop-light.jpg);
+ /* padding: 60px;
+  color: white;
+  text-align: right;
+  font-family: "Josefin Sans", sans-serif;
+  height:10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;   
+  background-size: cover;*/
+  background-size: cover;
+  height: 270px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  padding-bottom: 20px;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+}
+
+
+.header-bottom {
+  margin-top: 40px; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 900px;
+  text-align: center;
+ 
+}
+
+.header h1 {
+  display: flex;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+#newInput {
+  display: block;
+  margin: 0 auto;
+  text-align: left;
+  background-color:#ffffff;
+  border-radius: 5px;
+}
+
+ 
+/* Clear floats after the header */
+.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style for the input */
+input {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  width: 75%;
+  padding: 10px;
+  float: left;
+  font-size: 16px;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+/* Add button */
+.addBtn {
+  padding: 10px;
+  width: 10%;
+  background: #242bff;
+  color: #ffffff;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 0;
+}
+.addBtn:hover {
+  background-color: #4f71da;
+}
+#clear-completed-button {
+  border: none;
+    outline: none;
+    padding: 20px 20px;
+    color: #181717;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-left: 30px;
+    background: transparent;
+    font-family: 'Josefin Sans', sans-serif;
+}
+#clear-completed-button:active {
+  color: blue; 
+}
+#completed-button {
+  border: none;
+    outline: none;
+    padding: 20px 20px;
+    color: #181717;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-left: 30px;
+    background: transparent;
+    font-family: 'Josefin Sans', sans-serif;
+}
+#completed-button:active {
+  color: blue; 
+}
+
+#active-button {
+  border: none;
+    outline: none;
+    padding: 20px 20px;
+    color: #181717;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-left: 30px;
+    background: transparent;
+    font-family: 'Josefin Sans', sans-serif;
+}
+#active-button:active {
+  color: blue; 
+}
+
+#all-button {
+  border: none;
+    outline: none;
+    padding: 20px 20px;
+    color: #181717;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-left: 30px;
+    background: transparent;
+    font-family: 'Josefin Sans', sans-serif;
+}
+#all-button:active {
+  color: blue; 
+}
+
+/*Button container styles*/
+#button-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+
+/***************************************************************************************************/
+/* Light theme styles */
+.light-mode {
+  background-color: hsl(0, 0%, 98%);
+  color: #000;
+}
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+
+/* Dark theme styles */
+
+.dark-mode {
+  background-color:hsl(235, 21%, 11%);
+  color: white;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.dark-mode .todo-list-container {
+  color: hsl(234, 39%, 85%);
+}
+
+.dark-mode #newInput{
+  display: block;
+  margin: 0 auto;
+  text-align: left;
+  background-color: hsl(230, 24%, 19%);
+  color:hsl(233, 11%,84%)
+}
+.dark-mode .toggle-button{
+  border: none;
+    background: none;
+    src: url(images/icon-sun.svg);
+    cursor: pointer;
+    margin-left: 10px;
+}
+/* Button container styles when toggle button is clicked */
+.dark-mode ul li {
+  color: hsl(234, 39%, 85%); 
+  background-color: hsl(235, 24%, 19%);
+}
+
+.dark-mode #button-container button {
+  background-color: none;
+  color: white;
+}
+.dark-mode #task-count {
+  color: white;
+}
+
+/************************************************************************************************/
+
+/*Styling toggle-button*/
+.toggle-button
+{
+  border: none;
+  background: none;
+  src: url(images/icon-sun.svg);
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.toggle-button-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.toggle-button img
+{
+  width: 50px;
+  height: 50px;
+}
+
+/*Dragging styles*/
+.dragging {
+opacity: 0.5;
+}
+
+.over {
+background-color: lightgray;
+}
+
+/* Default styles for all devices */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Styles for devices with a maximum width of 768px (such as tablets) */
+@media (max-width: 768px) {
+body {
+  font-size: 14px;  
+}
+}
+
+/* Styles for devices with a maximum width of 480px (such as smartphones) */
+@media (max-width: 480px) {
+body {
+  font-size: 12px;
+  margin: 0 auto;
+  width: 90%;
+  height: auto;
+}
+}
