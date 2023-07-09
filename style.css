@@ -11,8 +11,10 @@ body {
   align-items: center;
   justify-content: center;
   height: 50vh;
-  color: black;
+  color: rgb(41, 40, 40);
+  font-family: 'Josefin Sans' , sans-serif;
 }
+
 #todo-list {
   margin:20px;
   padding: 50px;
@@ -25,14 +27,13 @@ body {
 }
 
 /*******************************************************************************/
-/*margins and padding for the list */
+/*styling for the list */
 ul {
   margin:20px;
   padding: 50px;
   width: 500px;
-  
 }
-/* Style the list items */
+
 ul li {
   list-style: none;
   font-size: 18px;
@@ -58,10 +59,6 @@ ul li::before {
   top: 17px;
   left: 8px; 
 }
-/* Darker background-color on hover 
-ul li:hover {
-  background: hsl(236, 33%, 92%)
-}*/
 
 /* When clicked on, add a background color and strike out text */
  li.checked {
@@ -71,9 +68,7 @@ ul li:hover {
 
 /* "checked" mark when clicked*/
 li.checked::before {
- /* background-color: transparent;*/
   background-image: url(images/correct-checkbox.png);
- /* background-size: cover;*/
 }
 /* Style the close button */
 .close {
@@ -90,16 +85,6 @@ li.checked::before {
 /* header style*/
 .header {
   background-image: url(images/bg-desktop-light.jpg);
- /* padding: 60px;
-  color: white;
-  text-align: right;
-  font-family: "Josefin Sans", sans-serif;
-  height:10%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;   
-  background-size: cover;*/
   background-size: cover;
   height: 270px;
   display: flex;
@@ -175,68 +160,74 @@ input {
   transition: 0.3s;
   border-radius: 0;
 }
+
 .addBtn:hover {
   background-color: #4f71da;
 }
+
 #clear-completed-button {
   border: none;
-    outline: none;
-    padding: 20px 20px;
-    color: #181717;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 10px;
-    margin-left: 30px;
-    background: transparent;
-    font-family: 'Josefin Sans', sans-serif;
+  outline: none;
+  padding: 20px 20px;
+  color: #181717;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-left: 30px;
+  background: transparent;
+  font-family: 'Josefin Sans', sans-serif;
 }
+
 #clear-completed-button:active {
   color: blue; 
 }
 #completed-button {
   border: none;
-    outline: none;
-    padding: 20px 20px;
-    color: #181717;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 10px;
-    margin-left: 30px;
-    background: transparent;
-    font-family: 'Josefin Sans', sans-serif;
+  outline: none;
+  padding: 20px 20px;
+  color: #181717;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-left: 30px;
+  background: transparent;
+  font-family: 'Josefin Sans', sans-serif;
 }
+
 #completed-button:active {
   color: blue; 
 }
 
 #active-button {
   border: none;
-    outline: none;
-    padding: 20px 20px;
-    color: #181717;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 10px;
-    margin-left: 30px;
-    background: transparent;
-    font-family: 'Josefin Sans', sans-serif;
+  outline: none;
+  padding: 20px 20px;
+  color: #181717;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-left: 30px;
+  background: transparent;
+  font-family: 'Josefin Sans', sans-serif;
 }
+
 #active-button:active {
   color: blue; 
 }
 
 #all-button {
   border: none;
-    outline: none;
-    padding: 20px 20px;
-    color: #181717;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 10px;
-    margin-left: 30px;
-    background: transparent;
-    font-family: 'Josefin Sans', sans-serif;
+  outline: none;
+  padding: 20px 20px;
+  color: #181717;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-left: 30px;
+  background: transparent;
+  font-family: 'Josefin Sans', sans-serif;
 }
+
 #all-button:active {
   color: blue; 
 }
@@ -250,7 +241,7 @@ input {
 }
 
 
-/***************************************************************************************************/
+/**************************************************************/
 /* Light theme styles */
 .light-mode {
   background-color: hsl(0, 0%, 98%);
@@ -260,7 +251,6 @@ input {
   max-width: 1440px;
   margin: 0 auto;
 }
-
 
 /* Dark theme styles */
 
@@ -273,6 +263,7 @@ input {
   max-width: 1440px;
   margin: 0 auto;
 }
+
 .dark-mode .todo-list-container {
   color: hsl(234, 39%, 85%);
 }
@@ -284,6 +275,7 @@ input {
   background-color: hsl(230, 24%, 19%);
   color:hsl(233, 11%,84%)
 }
+
 .dark-mode .toggle-button{
   border: none;
     background: none;
@@ -291,7 +283,7 @@ input {
     cursor: pointer;
     margin-left: 10px;
 }
-/* Button container styles when toggle button is clicked */
+/* Button container styles when toggle button is clicked - for the dark mode */
 .dark-mode ul li {
   color: hsl(234, 39%, 85%); 
   background-color: hsl(235, 24%, 19%);
@@ -327,12 +319,9 @@ input {
 {
   width: 50px;
   height: 50px;
+  
 }
 
-/*Dragging styles*/
-.dragging {
-opacity: 0.5;
-}
 
 .over {
 background-color: lightgray;

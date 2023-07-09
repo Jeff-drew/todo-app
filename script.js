@@ -1,4 +1,3 @@
-
 // Retrieve elements with the close class
 var closebtns = document.getElementsByClassName("close");
 var i;
