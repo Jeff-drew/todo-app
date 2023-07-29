@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # todo-app
 The web application is a simple management tool designed to assist users in organizing and managing their tasks. The application allows users to delete tasks once they are completed or are no longer needed.
 =======
@@ -14,4 +14,4 @@ The web application is a simple management tool designed to assist users in orga
  <li>HTML</li> 
   <li>CSS</li>
   <li>JAVASCRIPT</li>
->>>>>>> 28c46db45fb9465a587fe62761b5850716e4c4dc
+

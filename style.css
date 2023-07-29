@@ -1,197 +1,332 @@
 body {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-
-#todo-list-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 50vh;
-  color: rgb(41, 40, 40);
-  font-family: 'Josefin Sans' , sans-serif;
-}
-
-#todo-list {
-  margin:20px;
-  padding: 50px;
-  width: 500px;
-  position: relative;
-  list-style: none;
+  min-width: 250px;
+  font-family: "Josefin Sans", sans-serif;
+  background-color: hsl(236, 33%, 92%);
+  color: hsl(233, 14%, 35%);
+  font-size: 14px;
   text-align: center;
-  font-family: 'Josefin Sans', sans-serif;
-  color: #000;
 }
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
 
-/*******************************************************************************/
-/*styling for the list */
-ul {
-  margin:20px;
-  padding: 50px;
-  width: 500px;
-}
-
-ul li {
-  list-style: none;
-  font-size: 18px;
-  padding: 12px 8px 12px 40px;
-  user-select: none;
-  position: relative;
-  cursor: pointer;
-  border-bottom: solid 1px hsl(233, 11%,84%);
-  color: hsl(240deg 5.41% 29.27%);;
-  text-align: left;
-  font-family: 'Josefin Sans', sans-serif; 
-}
-/* Adding circles for checks*/
-ul li::before {
-  content:"";
-  position: absolute;
-  height: 18px;
-  width: 18px;
-  border-radius: 50%;
-  background-size: cover;
-  background-position: center;
-  background-image: url(images/grey_circle-unchecked-removebg-preview.png);
-  top: 17px;
-  left: 8px; 
-}
-
-/* When clicked on, add a background color and strike out text */
- li.checked {
-  color: hsl(236, 9%, 61%);
-  text-decoration: line-through;
-}
-
-/* "checked" mark when clicked*/
-li.checked::before {
-  background-image: url(images/correct-checkbox.png);
-}
-/* Style the close button */
-.close {
-  position: absolute;
-  right: 0;
-  top: 0;
-  padding: 12px 16px 12px 16px;
-} 
-.close:hover {
-  background-color: #f44336;
-  color: white;
-}
-/***************************************************************************************************/
-/* header style*/
+/***********************************************************************/
+/* the header style*/
 .header {
-  background-image: url(images/bg-desktop-light.jpg);
-  background-size: cover;
-  height: 270px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  color: #fff;
-  padding-bottom: 20px;
-  font-family: 'Josefin Sans', sans-serif;
+  justify-content: space-between;
+  padding: 30px;
+  background: url(images/bg-desktop-light.jpg);
+  background-size: cover;
+  min-height: 20vh;
+}
+
+.header h1 {
+  margin: 0;
+  color: white;
+  font-size: 32px;
+  margin-bottom: 5px;
+}
+
+#newInput {
+  display: flex;
+  outline: none;
+  width: 100%;
+  max-width: 500px;
+  padding-left: 40px;
+  position: inherit;
+  font-size: 14px;
+  font-family: "Josefin Sans", sans-serif;
+  caret-color: #ccc;
+  margin: 0;
+  border: none;
+  outline: none;
+  border-radius: 5px; 
+  padding: 15px 10px 10px ; 
+}
+
+#newInputPlaceholder {
+  margin: 0;
+  border: none;
+  outline: none;
+  border-radius: 5px; 
+  width: 100%;
+  padding: 10px 40px 10px 10px; 
+  font-size: 18px;
+  font-family: "Josefin Sans", sans-serif;
+  z-index: 1; 
+  position: relative; 
+}
+#newInputPlaceholder::placeholder {
+  color: #acaaaa;
+}
+
+input:focus::placeholder {
+  opacity: 0.2;
 }
 
 .header-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 50%;
-}
-
+  width: 100%;
+  max-width:500px;
+ }
 
 .header-bottom {
-  margin-top: 40px; 
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  width: 900px;
-  text-align: center;
- 
-}
-
-.header h1 {
-  display: flex;
-  font-family: "Josefin Sans", sans-serif;
-}
-
-#newInput {
-  display: block;
-  margin: 0 auto;
-  text-align: left;
-  background-color:#ffffff;
+  width: 100%;
+  max-width: 500px;
+  position: relative;
   border-radius: 5px;
+  margin-bottom: 0.1rem;
 }
 
- 
 /* Clear floats after the header */
 .header:after {
   content: "";
   display: table;
   clear: both;
+} 
+
+.input-container {
+  position: relative;
+  flex: 1;
 }
 
-/* Style for the input */
+/***********************************************************/
+/*The List Styling */
+
+#todo-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  margin-top: -30px;
+  border-radius: 5px;
+  font-family: "Josefin Sans, sans-serif";
+}
+
+#todo-list-container {
+  overflow-x: hidden;
+}
+
+#todo-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+#todo-list::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+#todo-list::-webkit-scrollbar-thumb {
+  background-color: hsl(236, 9%, 61%);
+}
+
+
+/*the toggle-button styling*/
+.toggle-button {
+  border: none;
+  background-color: transparent;
+  background: none;
+  src: url(/images/icon-moon.svg);
+  cursor: pointer;
+  position: right;
+  margin-left: 20px;
+  margin-right: calc(100% - 500px);
+}
+
+.toggle-button-container {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.toggle-button img
+{
+  width: 20px;
+  
+}
+
+/************************************************************/
+/* The margins and padding for list */
+ul {
+  margin: 20px;
+  padding: 50px;
+  width: 500px;
+  position: relative;
+  border-radius: 5px;
+}
+
+/* the list items styling */
+ul li {
+  cursor: pointer;
+  position: relative;
+  transition: 0.2s; 
+  border-bottom: 1px solid #ccc;
+  font-size: 18px;
+  list-style-type: none;
+  background-color: #fff;
+  padding: 12px 8px 12px 40px;  
+  font-family: "Josefin Sans", sans-serif;
+}
+
+li {
+  display: flex;
+  padding: 12px;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Adding circles for checks */
+ul li::before {
+  width: 20px;
+  height: 20px;
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background-color 0.3s ease-in-out;
+  border: 1px solid #9e9e9e;
+  border-radius: 50%;
+}
+
+/* Change border color on hover */
+ul li:hover::before {
+  border: 1px solid thistle;  
+  border-color: linear-gradient(to bottom, hsl(192, 100%, 67%), hsl(280, 87%, 65%)) ;   
+}
+
+/* When clicked on, add a background color and strike out text */
+ul li.checked {
+  color: hsl(236, 9%, 61%);
+  text-decoration: line-through;
+}
+
+/* "checked" mark when clicked */
+ul li.checked::before {
+  content: url("./images/icon-check.svg");
+  background-image: linear-gradient(to bottom, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  background-size:contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 0px solid transparent;
+  border-radius: 50%;
+  width: 20px; 
+  height: 20px; 
+}
+
+/* the default check */
+ul li.checked::before {
+  opacity: 1;
+  border-radius: 50%;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+}
+
+/* Style the close button */
+.close {
+  position: absolute;
+  visibility: hidden;
+  margin-left: auto; 
+  padding: 12px 16px 12px 16px;
+  right: 0;
+  top: 0;
+}
+
+.close:hover {
+  background-color:hsl(236, 9%, 61%);
+  color: black;
+}
+li:hover .close {
+  visibility: visible;
+  background: none;
+}
+
+
+/* Style the input */
 input {
   margin: 0;
   border: none;
   border-radius: 0;
-  width: 75%;
-  padding: 10px;
-  float: left;
-  font-size: 16px;
+  width: 100%; 
+  padding: 10px 40px 10px 30px; 
+  font-size: 18px;
   font-family: "Josefin Sans", sans-serif;
 }
-
-/* Add button */
-.addBtn {
-  padding: 10px;
-  width: 10%;
-  background: #242bff;
-  color: #ffffff;
-  float: left;
-  text-align: center;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
-  border-radius: 0;
+/*Add button */
+.add-button-container {
+  position: absolute;
+  left: 0;
+  margin-left: 5px;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px; 
+  z-index: 2; 
 }
 
-.addBtn:hover {
-  background-color: #4f71da;
+#add-button {
+  background-color: transparent;
+  border: 1px solid #9e9e9e;
+  border-radius: 50%;
+  padding: 0.5rem;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  z-index: 2; 
+}
+
+#add-button:before {
+  content: ""; 
+  font-size: 16px;
+}
+
+#add-button:hover {
+  border: 1px solid thistle;
 }
 
 #clear-completed-button {
+  background: none;
   border: none;
-  outline: none;
-  padding: 20px 20px;
-  color: #181717;
-  font-size: 16px;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  color: #000;
+  text-decoration: none;
   cursor: pointer;
-  border-radius: 10px;
-  margin-left: 30px;
-  background: transparent;
-  font-family: 'Josefin Sans', sans-serif;
+  margin-top: 10px; 
 }
-
 #clear-completed-button:active {
   color: blue; 
 }
 #completed-button {
+  background: none;
+  padding: 0;
+  margin-top: 10px; 
+  font-size: inherit;
   border: none;
-  outline: none;
-  padding: 20px 20px;
-  color: #181717;
-  font-size: 16px;
+  text-decoration: none;
+  font-family: inherit;
   cursor: pointer;
-  border-radius: 10px;
-  margin-left: 30px;
-  background: transparent;
-  font-family: 'Josefin Sans', sans-serif;
+  color: #000;
 }
 
 #completed-button:active {
@@ -199,49 +334,67 @@ input {
 }
 
 #active-button {
-  border: none;
-  outline: none;
-  padding: 20px 20px;
-  color: #181717;
-  font-size: 16px;
+  background: none;
+  font-size: inherit;
+  font-family: inherit;
+  color: #000;
+  text-decoration: none;
   cursor: pointer;
-  border-radius: 10px;
-  margin-left: 30px;
-  background: transparent;
-  font-family: 'Josefin Sans', sans-serif;
+  border: none;
+  padding: 0;
+  margin-top: 10px;
 }
-
 #active-button:active {
   color: blue; 
 }
 
 #all-button {
+  background: none;
   border: none;
-  outline: none;
-  padding: 20px 20px;
-  color: #181717;
-  font-size: 16px;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  color: #000;
+  text-decoration: none;
   cursor: pointer;
-  border-radius: 10px;
-  margin-left: 30px;
-  background: transparent;
-  font-family: 'Josefin Sans', sans-serif;
+  margin-top: 10px;
 }
-
 #all-button:active {
   color: blue; 
 }
 
-/*Button container styles*/
-#button-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
+
+/*the styling for the button container */
+#button-container {
+display: flex;
+align-items: center;
+justify-content: center;
+font-family: "Josefin Sans", sans-serif;
+font-size: 14px;
+color: hsl(233, 14%, 35%);
+padding: 5px;
+min-height: fit-content;
+width: fit-content; 
+border-radius: 5px;
+box-shadow: 1px 3px 3px 1px rgba(133, 125, 125, 0.2);
+margin: auto; 
 }
 
+#button-container button {
+background: none;
+border: none;
+padding: 8px 12px;
+}
 
-/**************************************************************/
+#task-count {
+margin-right: 40px; 
+}
+
+#clear-completed-button {
+margin-left: 40px;
+}
+
+/*******************************************************************/
 /* Light theme styles */
 .light-mode {
   background-color: hsl(0, 0%, 98%);
@@ -250,103 +403,158 @@ input {
 .container {
   max-width: 1440px;
   margin: 0 auto;
+  padding: 20px;
 }
 
-/* Dark theme styles */
 
+/* Dark theme styles */
 .dark-mode {
   background-color:hsl(235, 21%, 11%);
-  color: white;
+  color: hsl(234, 39%, 85%);
 }
 
 .container {
   max-width: 1440px;
   margin: 0 auto;
+  padding: 20px;
+  color: hsl(235, 61%, 15%);
 }
 
 .dark-mode .todo-list-container {
-  color: hsl(234, 39%, 85%);
+   color: hsl(108, 39%, 85%);
 }
 
 .dark-mode #newInput{
-  display: block;
-  margin: 0 auto;
-  text-align: left;
-  background-color: hsl(230, 24%, 19%);
-  color:hsl(233, 11%,84%)
+  background-color: hsl(235, 24%, 19%);
+  color: #ccc;
 }
 
-.dark-mode .toggle-button{
-  border: none;
-    background: none;
-    src: url(images/icon-sun.svg);
-    cursor: pointer;
-    margin-left: 10px;
+.dark-mode #newInputPlaceholder{
+  background-color: hsl(235, 24%, 19%);
+  color: hsl(234, 39%, 85%);
 }
-/* Button container styles when toggle button is clicked - for the dark mode */
+
+
+/* Button container styles when toggle button is clicked */
 .dark-mode ul li {
+  border-bottom:1px solid #333333;
   color: hsl(234, 39%, 85%); 
   background-color: hsl(235, 24%, 19%);
+ 
 }
-
 .dark-mode #button-container button {
   background-color: none;
-  color: white;
+  color: hsl(234, 39%, 85%);
 }
 .dark-mode #task-count {
-  color: white;
+  color: hsl(234, 39%, 85%);
 }
 
-/************************************************************************************************/
 
-/*Styling toggle-button*/
-.toggle-button
-{
-  border: none;
-  background: none;
-  src: url(images/icon-sun.svg);
-  cursor: pointer;
-  margin-left: 10px;
+/***********************************************************/
+/*Dragging styles*/
+.dragging {
+opacity: 0.5;
 }
-
-.toggle-button-container {
-  flex-grow: 1;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.toggle-button img
-{
-  width: 50px;
-  height: 50px;
-  
-}
-
 
 .over {
 background-color: lightgray;
 }
 
-/* Default styles for all devices */
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
+/*************************************************************/
+/* Styling for screen width like mobile devices */
+@media screen and (max-width: 500px) {
+  .header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 12px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+
+  .header h1 {
+    padding-left: 0;
+    font-size: 24px;
+  }
+
+  .header-top {
+    margin-top: 15px;
+    align-items: center;
+    justify-content: space-between;
+    width: 85%;
+    max-width: 500px;
+  }
+
+  .header-bottom {
+    flex-direction: column; 
+  }
+
+  .header-bottom .input-container {
+    margin-bottom: 10px; /* Add  spacing between the input container and the Add button */
+  }
+
+  ul{
+    width: 420px;
+  }
+
+  #newInputPlaceholder,
+  #newInput {
+    width: 80%; 
+  }
+
+  #add-button {
+    display: none;
+    margin-top: 10px; /* Add  spacing between the Add button and the input field */
+  }
+
+  #todo-list-container {
+    margin-top: 0; 
+  }
+  .toggle-button{
+    margin-right: calc(100% - 370px);
+  }
+  #button-container{
+    width: 400px;
+  }
 }
 
-/* Styles for devices with a maximum width of 768px (such as tablets) */
-@media (max-width: 768px) {
-body {
-  font-size: 14px;  
-}
+
+/* Styles for screen width from 560px to 740px like tablets) */
+@media screen and (min-width: 560px) and (max-width: 740px) {
+  .header h1 {
+    font-size: 24px; 
+  }
+
+    
+  #add-button {
+    display: none;
+    margin-top: 10px; 
+  }
+
+  #todo-list-container {
+    margin-top: -20px; 
+  }
 }
 
-/* Styles for devices with a maximum width of 480px (such as smartphones) */
-@media (max-width: 480px) {
-body {
-  font-size: 12px;
-  margin: 0 auto;
-  width: 90%;
-  height: auto;
-}
+/* Styles for screen width above 742px like desktops */
+@media screen and (min-width: 742px) {
+  .header h1 {
+    font-size: 32px; 
+  }
+
+  #newInput,
+  #newInputPlaceholder {
+    width: 100%; 
+  }
+
+  #add-button {
+    display: none;
+    margin-top: 0; 
+  }
+
+  #todo-list-container {
+    margin-top: -30px; 
+  }
 }

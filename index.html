@@ -1,48 +1,50 @@
 <!DOCTYPE html>
-<html>
-<div class = "container">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-  </head>
- 
-<body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">  
+  <title>Todo App </title>
+  <link rel = stylesheet type ="text/css" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans">
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script> 
+</head>
 
+<body>
   <div id="header" class="header">
     <div class="header-top">
       <h1>T O D O</h1>
       <button class="toggle-button" onclick="myFunction()">
-        <img src="images/icon-moon.svg" alt="Light Mode Icon">
+        <img src="images/icon-moon.svg">
       </button>
     </div>
-    <div class="header-bottom">
-      <input type="text" id="newInput" placeholder="Create new task">
-    </div>
+
+    <div class="header-bottom">      
+      <input type="text" id="newInputPlaceholder" placeholder="Create a new todo">
+      <div class="add-button-container">
+        <button id="add-button" onclick="addTask"></button> 
+      </div>
+    </div>    
   </div>
-  
   
   <div id = "todo-list-container">
-    <ul id = "todo-list">
-    </ul>
-
-    
-    <div id="button-container">
-      <div id="task-count"></div>
-      <button id="all-button">All</button>
-      <button id="active-button">Active</button>
-      <button id="completed-button">Completed</button>
-      <button id="clear-completed-button"> Clear Completed</button>
-    </div>
+    <ul id="todo-list"></ul>
   </div>
 
+  <div id="button-container">
+    <div id="task-count"></div>
+    <button id="all-button">All</button>
+    <button id="active-button">Active</button>
+    <button id="completed-button">Completed</button>
+    <button id="clear-completed-button">Clear Completed</button>
+  </div>
+  
+<footer class="attribution">
+    <p>Drag and drop to reorder the list</p>
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/Jeff-drew/todo-app">Jeffrey Andrew Attoh</a>.
+</footer>
+
   <script type ="text/javascript" src="script.js"></script>
-
 </body>
-</div>
-
 </html>
